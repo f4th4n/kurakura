@@ -1,3 +1,7 @@
+## Dependency
+
+- cocos2d-x
+
 ## How to run:
 
 ```
