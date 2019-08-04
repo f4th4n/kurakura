@@ -1,0 +1,41 @@
+################################################################################################### DATA
+
+IS_MINIFIED=false # true|false. minified version, will be hard to debug via logcat
+
+#    usage: ./build
+#    example: ./build
+#    flow:
+#        - merge all files. output: tmp/merged.js
+#        - babel compile and pollyfill JS. output: tmp/compiled.js
+#        - babel minify JS. output: tmp/compiled.min.js all
+#        - cocos compile
+#        - adb install
+
+################################################################################################### CODE
+
+echo "build for android"
+
+mkdir -p tmp
+touch tmp/merged.js
+
+node setup_project.js android
+npx babel node_modules/babel-polyfill/dist/polyfill.min.js tmp/merged.js --out-file tmp/compiled.js
+
+if [ "$IS_MINIFIED" = true ]
+then
+    uglifyjs --compress --mangle -- tmp/compiled.js > tmp/compiled.min.js
+    mv tmp/compiled.min.js src/app_prod.js
+else
+    mv tmp/compiled.js src/app_prod.js
+fi
+
+rm -rf tmp
+
+# to compile production use:
+cocos compile -p android --android-studio -m release && adb install -r publish/android/dua-release-signed.apk
+
+# to compile dev use:
+#cocos compile -p android --android-studio && adb install -r simulator/android/dua-debug.apk
+node setup_project.js web
+echo "finish, you can test and modify by web again"
+play ~/Music/ringtone/beep.mp3 -q

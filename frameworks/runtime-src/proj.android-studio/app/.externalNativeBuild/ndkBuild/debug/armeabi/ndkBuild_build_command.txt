@@ -1,0 +1,22 @@
+Executable : /home/fathan/Android/Sdk/ndk-bundle/ndk-build
+arguments : 
+NDK_PROJECT_PATH=null
+APP_BUILD_SCRIPT=/home/fathan/work/game/dua/cocos_app/frameworks/runtime-src/proj.android-studio/app/jni/Android.mk
+NDK_APPLICATION_MK=/home/fathan/work/game/dua/cocos_app/frameworks/runtime-src/proj.android-studio/app/jni/Application.mk
+APP_ABI=armeabi
+NDK_ALL_ABIS=armeabi
+NDK_DEBUG=1
+APP_PLATFORM=android-14
+NDK_OUT=/home/fathan/work/game/dua/cocos_app/frameworks/runtime-src/proj.android-studio/app/build/intermediates/ndkBuild/debug/obj
+NDK_LIBS_OUT=/home/fathan/work/game/dua/cocos_app/frameworks/runtime-src/proj.android-studio/app/build/intermediates/ndkBuild/debug/lib
+NDK_TOOLCHAIN_VERSION=4.9
+APP_PLATFORM=android-13
+NDK_MODULE_PATH=/home/fathan/work/game/dua/cocos_app/frameworks/cocos2d-x:/home/fathan/work/game/dua/cocos_app/frameworks/cocos2d-x/cocos:/home/fathan/work/game/dua/cocos_app/frameworks/cocos2d-x/external
+-j4
+NDK_DEBUG=1
+APP_SHORT_COMMANDS=false
+LOCAL_SHORT_COMMANDS=false
+-B
+-n
+jvmArgs : 
+

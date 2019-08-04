@@ -1,0 +1,6 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<resources>
+    <string name="app_name" translatable="false">Kura Kura</string>
+    <string name="google_app_id" translatable="false">google_app_id</string>
+    <string name="service_id" translatable="false">nearby_service_id</string>
+</resources>
